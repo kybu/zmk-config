@@ -10,15 +10,20 @@
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/ext_power.h>
 
-#define BASE 0
-#define L_FIRST 1
-#define L_SECOND 2
-#define L_THIRD 3
-
 / {
 
   keymap {
     compatible = "zmk,keymap";
+    behaviors {
+        mt: mod_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <157>;
+            bindings = <&kp>, <&kp>;
+            display-name = "Mod-Tap";
+        };
+    };
 
     default_layer {
       display-name = "default";
@@ -29,10 +34,10 @@
       // | SHIFT |  Z  |  X  |  C   |  V   |  B   |  MUTE  |  | PLAY  |  N   |  M    |  ,    |  .   |   /   | SHIFT |
       //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
       bindings = <
-        &kp GRAVE           &kp N1 &kp N2   &kp N3   &kp N4          &kp N5                           &kp N6 &kp N7          &kp N8    &kp N9   &kp N0   &lt 3 BSLH
-        &mt LC(LSHFT) INS   &kp Q  &kp W    &kp E    &mt LCTRL R     &kp T                            &kp Y  &mt RCTRL U     &kp I     &kp O    &kp P    &kp SQT
-        &kp LSHFT           &kp A  &kp S    &kp D    &lt 1 F     &kp G                                  &kp H  &lt 2 J     &kp K     &kp L    &kp SEMI &mt ESC RSHFT 
-        &kp LALT            &kp Z  &kp X    &kp C    &kp V     &kp B   &kp GRAVE &kp EQUAL     &kp N  &kp M     &kp COMMA &kp DOT  &kp FSLH &kp RALT
+        &kp LC(LSHFT)           &kp N1 &kp N2   &kp N3   &kp N4          &kp N5                           &kp N6 &kp N7          &kp N8    &kp N9   &kp N0   &lt 5 BSLH
+        &mt LC(LALT) INS   &kp Q  &kp W    &kp E    &mt LCTRL R     &kp T                            &kp Y  &mt RCTRL U     &kp I     &kp O    &kp P    &kp SQT
+        &kp LSHFT           &kp A  &kp S    &lt 3 D    &lt 1 F     &kp G                             &kp H  &lt 2 J     &lt 4     &kp L    &kp SEMI &mt RSHFT ESC
+        &kp LALT            &kp Z  &kp X    &kp C    &kp V     &kp B   &mt LGUI GRAVE &kp EQUAL     &kp N  &kp M     &kp COMMA &kp DOT  &kp FSLH &kp RALT
         &none &none &none &kp TAB  &kp BSPC &kp RET  &kp SPACE &none &none &none 
       >;
 
@@ -78,6 +83,44 @@
     };
 
     third_layer {
+      display-name = "third";
+      // ------------------------------------------------------------------------------------------------------------
+      // |       |  F1 |  F2 |  F3  |  F4  |  F5  |                   |  F6  |  F7   |  F8   |  F9  |  F10  |  F11  |
+      // |   `   |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |  F12  |
+      // |       |  !  |  @  |  #   |  $   |  %   |                   |  ^   |  &    |  *    |  (   |   )   |   |   |
+      // |       |  =  |  -  |  +   |  {   |  }   |        |  |       |  [   |  ]    |  ;    |  :   |   \   |       |
+      //               |     |      |      |      |        |  |       |      |       |       |      |
+      bindings = <
+        &trans    &trans    &trans   &trans       &trans    &trans                   &trans &trans &trans &trans &trans &trans
+        &trans    &trans    &trans   &trans       &trans    &trans                   &trans   &kp RPAR &kp RBKT    &kp RBRC    &trans    &trans
+        &trans    &trans    &trans   &trans       &trans    &trans                   &trans   &kp LPAR &kp LBKT &kp LBRC  &trans  &trans
+        &trans    &trans    &trans   &trans       &trans    &trans   &trans    &trans  &trans &trans &trans &trans &trans &trans
+        &trans    &trans      &trans    &trans     &trans &trans  &trans       &trans   &trans    &trans
+      >;
+
+      sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_PREV C_NEXT>;
+    };
+
+    fourth_layer {
+      display-name = "fourth";
+      // ------------------------------------------------------------------------------------------------------------
+      // | BTCLR | BT1  | BT2  |  BT3  |  BT4  |  BT5 |                |      |      |       |      |       |       |
+      // |       | INS  | PSCR | GUI   |       |      |                | PGUP |      |   ^   |      |       |       |
+      // |       | ALT  | CTRL | SHIFT |       | CAPS |                | PGDN |   <- |   v   |  ->  |  DEL  | BKSPC |
+      // |       | UNDO | CUT  | COPY  | PASTE |      |      |  |      |      |      |       |      |       |       |
+      //                |      |       |       |      |      |  |      |      |      |       |      |
+      bindings = <
+        &trans    &trans    &trans   &trans       &trans    &trans                   &trans &trans &trans &trans &trans &trans
+        &trans    &trans    &trans   &trans       &trans    &trans              &trans &trans &trans &trans &trans &trans 
+        &trans    &trans    &kp UNDER    &kp MINUS   &kp PLUS    &trans                    &trans &trans &trans &trans &trans &trans 
+        &trans    &trans    &trans   &trans       &trans    &trans   &trans &trans &trans &trans &trans &trans &trans &trans 
+        &trans    &trans      &trans    &trans     &trans &trans  &trans       &trans   &trans    &trans
+      >;
+
+      sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_PREV C_NEXT>;
+    };
+
+    fifth_layer {
       // ----------------------------------------------------------------------------------------------------------------------------
       // | BTCLR  |  BT1    |  BT2    |   BT3   |   BT4   |   BT5   |                  |      |      |       |      |       |       |
       // | EXTPWR | RGB_HUD | RGB_HUI | RGB_SAD | RGB_SAI | RGB_EFF |                  |      |      |       |      |       |       |
