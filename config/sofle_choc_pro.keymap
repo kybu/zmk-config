@@ -50,7 +50,7 @@
       bindings = <
         &trans    &trans    &trans   &trans       &trans    &trans                   &kp F1    &kp F2   &kp F3    &kp F4    &kp F5   &kp PGUP
         &trans    &trans    &trans   &trans       &trans    &trans                   &kp DEL   &kp HOME &kp UP    &kp END    &kp F6    &kp PGDN
-        &trans    &trans    &trans   &kp LCTRL    &trans    &trans                   &kp BKSPC &kp LEFT &kp DOWN &kp RIGHT  &kp F7  &trans
+        &trans    &trans    &trans   &kp LCTRL    &trans    &trans                   &kp BSPC &kp LEFT &kp DOWN &kp RIGHT  &kp F7  &trans
         &trans    &trans    &trans   &trans       &trans    &trans   &trans    &trans  &kp F8  &kp F9 &kp F10  &kp F11 &kp F12  &trans
         &trans    &trans      &trans    &trans     &trans &trans  &trans       &trans   &trans    &trans
       >;
