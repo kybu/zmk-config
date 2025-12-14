@@ -11,9 +11,6 @@
 #include <dt-bindings/zmk/ext_power.h>
 
 / {
-
-  keymap {
-    compatible = "zmk,keymap";
     behaviors {
         mt: mod_tap {
             compatible = "zmk,behavior-hold-tap";
@@ -24,6 +21,9 @@
             display-name = "Mod-Tap";
         };
     };
+
+  keymap {
+    compatible = "zmk,keymap";
 
     default_layer {
       display-name = "default";
@@ -36,7 +36,7 @@
       bindings = <
         &kp LC(LSHFT)           &kp N1 &kp N2   &kp N3   &kp N4          &kp N5                           &kp N6 &kp N7          &kp N8    &kp N9   &kp N0   &lt 5 BSLH
         &mt LC(LALT) INS   &kp Q  &kp W    &kp E    &mt LCTRL R     &kp T                            &kp Y  &mt RCTRL U     &kp I     &kp O    &kp P    &kp SQT
-        &kp LSHFT           &kp A  &kp S    &lt 3 D    &lt 1 F     &kp G                             &kp H  &lt 2 J     &lt 4     &kp L    &kp SEMI &mt RSHFT ESC
+        &kp LSHFT           &kp A  &kp S    &lt 3 D    &lt 1 F     &kp G                             &kp H  &lt 2 J     &lt 4 K   &kp L    &kp SEMI &mt RSHFT ESC
         &kp LALT            &kp Z  &kp X    &kp C    &kp V     &kp B   &mt LGUI GRAVE &kp EQUAL     &kp N  &kp M     &kp COMMA &kp DOT  &kp FSLH &kp RALT
         &none &none &none &kp TAB  &kp BSPC &kp RET  &kp SPACE &none &none &none 
       >;
