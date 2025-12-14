@@ -33,7 +33,7 @@
         &mt LC(LSHFT) INS   &kp Q  &kp W    &kp E    &mt LCTRL R     &kp T                            &kp Y  &mt RCTRL U     &kp I     &kp O    &kp P    &kp SQT
         &kp LSHFT           &kp A  &kp S    &kp D    &lt 1 F     &kp G                                  &kp H  &lt 2 J     &kp K     &kp L    &kp SEMI &mt ESC RSHFT 
         &kp LALT            &kp Z  &kp X    &kp C    &kp V     &kp B   &kp GRAVE &kp EQUAL     &kp N  &kp M     &kp COMMA &kp DOT  &kp FSLH &kp RALT
-        &none &none &none &kp TAB  &kp BKSPC                  &kp ENTER  &kp SPACE &none &none &none 
+        &none &none &none &kp TAB  &kp BKSPC                  &kp RET  &kp SPACE &none &none &none 
       >;
 
       sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_PREV C_NEXT>;
