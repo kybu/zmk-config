@@ -48,8 +48,8 @@
       // | SHIFT |  Z  |  X  |  C   |  V   |  B   |  MUTE  |  | PLAY  |  N   |  M    |  ,    |  .   |   /   | SHIFT |
       //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
       bindings = <
-        &kp LGUI &kp N1 &kp N2   &kp N3   &kp N4          &kp N5                           &kp N6 &kp N7          &kp N8    &kp N9   &kp N0   &lt 5 BSLH
-        &kp ESC &kp Q  &kp W    &kp E    &mt LCTRL R     &kp T                            &kp Y  &mt RCTRL U     &kp I     &kp O    &kp P    &kp SQT
+        &kp LC(LA(LS(F12))) &kp N1 &kp N2   &kp N3   &kp N4          &kp N5                           &kp N6 &kp N7          &kp N8    &kp N9   &kp N0   &lt 5 BSLH
+        &kp LC(LA(LS(F11))) &kp Q  &kp W    &kp E    &mt LCTRL R     &kp T                            &kp Y  &mt RCTRL U     &kp I     &kp O    &kp P    &kp SQT
         &kp LSHFT           &kp A  &kp S    &lt 3 D    &lt 1 F     &kp G                             &kp H  &lt 2 J     &lt 4 K   &kp L    &kp SEMI &kp RSHFT
         &kp LALT            &kp Z  &kp X    &kp C    &kp V     &kp B   &kp GRAVE &kp EQUAL     &kp N  &kp M     &kp COMMA &kp DOT  &kp FSLH &kp RALT
         &none &none &none &kp TAB  &kp BSPC &kp RET  &kp SPACE &none &none &none 
@@ -125,8 +125,8 @@
       //                |      |       |       |      |      |  |      |      |      |       |      |
       bindings = <
         &trans    &trans    &trans   &trans       &trans    &trans                   &trans &trans &trans &trans &trans &trans
-        &trans    &trans    &sk LA(LSHFT)   &sk LC(LSHFT) &sk LC(LALT)    &trans              &trans &trans &trans &trans &trans &trans 
-        &trans    &trans    &kp UNDER    &kp MINUS   &kp PLUS    &trans                    &trans &trans &trans &trans &trans &trans 
+        &trans    &sk LC(LSHFT)    &sk LA(LSHFT)   &sk LC(LA(LSHFT)) &sk LC(LALT)    &trans              &trans &trans &trans &trans &trans &trans 
+        &trans    &sk LGUI    &kp UNDER    &kp MINUS   &kp PLUS    &trans                    &trans &trans &trans &trans &trans &trans 
         &trans    &trans    &trans   &trans       &trans    &trans   &trans &trans &trans &trans &trans &trans &trans &trans 
         &trans    &trans      &trans    &trans     &trans &trans  &trans       &trans   &trans    &trans
       >;
