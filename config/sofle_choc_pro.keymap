@@ -16,6 +16,15 @@
 };
 
 / {
+    combos {
+        compatible = "zmk,combos";
+        combo_esc {
+            timeout-ms = <47>;
+            key-positions = <28 31>;
+            bindings = <&kp ESC>;
+        };
+    };
+
     behaviors {
         mt: mod_tap {
             compatible = "zmk,behavior-hold-tap";
