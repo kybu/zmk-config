@@ -54,8 +54,6 @@
         &kp LALT            &kp Z  &kp X    &kp C    &kp V     &kp B   &kp GRAVE &kp EQUAL     &kp N  &kp M     &kp COMMA &kp DOT  &kp FSLH &kp RALT
         &kp LGUI &none &none &kp TAB  &kp BSPC &kp RET  &kp SPACE &kp ESC &none &none 
       >;
-
-      sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_PREV C_NEXT>;
     };
 
     first_layer {
@@ -69,12 +67,10 @@
       bindings = <
         &trans    &trans    &trans   &trans       &trans    &trans                   &kp F1    &kp F2   &kp F3    &kp F4    &kp F5   &kp PGUP
         &trans    &trans    &trans   &trans       &trans    &trans                   &kp DEL   &kp HOME &kp UP    &kp END    &kp F6    &kp PGDN
-        &trans    &trans    &trans   &kp LCTRL    &trans    &trans                   &kp BSPC &kp LEFT &kp DOWN &kp RIGHT  &kp F7  &trans
+        &trans    &trans    &trans   &kp LCTRL    &trans    &trans                   &kp CAPS &kp LEFT &kp DOWN &kp RIGHT  &kp F7  &trans
         &trans    &trans    &trans   &trans       &trans    &trans   &trans    &trans  &kp F8  &kp F9 &kp F10  &kp F11 &kp F12  &trans
         &trans    &trans      &trans    &trans     &trans &trans  &trans       &trans   &trans    &trans
       >;
-
-      sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_PREV C_NEXT>;
     };
 
     second_layer {
@@ -92,8 +88,6 @@
         &trans    &kp STAR    &kp N1   &kp N2       &kp N3    &trans   &trans &trans &trans &trans &trans &trans &trans &trans 
         &trans    &trans      &trans    &trans     &trans &trans  &trans       &trans   &trans    &trans
       >;
-
-      sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_PREV C_NEXT>;
     };
 
     third_layer {
@@ -111,8 +105,6 @@
         &trans    &trans    &trans   &trans       &trans    &trans   &trans    &trans  &trans &trans &trans &trans &trans &trans
         &trans    &trans      &trans    &trans     &trans &trans  &trans       &trans   &trans    &trans
       >;
-
-      sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_PREV C_NEXT>;
     };
 
     fourth_layer {
@@ -130,8 +122,6 @@
         &trans    &trans    &trans   &trans       &trans    &trans   &trans &trans &trans &trans &trans &trans &trans &trans 
         &trans    &trans      &trans    &trans     &trans &trans  &trans       &trans   &trans    &trans
       >;
-
-      sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_PREV C_NEXT>;
     };
 
     fifth_layer {
