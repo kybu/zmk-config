@@ -51,4 +51,5 @@ CONFIG_ZMK_BLE_EXPERIMENTAL_CONN=y
 # Rotate display
 CONFIG_NICE_VIEW_DISP_ROTATE_180=y
 
+# Increase the bluetooth power
 CONFIG_BT_CTLR_TX_PWR_PLUS_8=y

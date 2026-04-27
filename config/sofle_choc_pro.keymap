@@ -76,11 +76,11 @@
       // | SHIFT |  Z  |  X  |  C   |  V   |  B   |  MUTE  |  | PLAY  |  N   |  M    |  ,    |  .   |   /   | SHIFT |
       //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
       bindings = <
-        &kp LC(LA(LS(F12))) &kp N1 &kp N2   &kp N3   &kp N4          &kp N5                           &kp N6 &kp N7          &kp N8    &kp N9   &kp N0   &lt 5 BSLH
+        &kp LC(LA(LS(F12))) &kp N1 &kp N2   &kp N3   &kp N4          &kp N5                           &kp N6 &kp N7          &kp N8    &kp N9   &kp N0   &lt 6 BSLH
         &kp LC(LA(LS(F11))) &kp Q  &kp W    &kp E    &hml LCTRL R     &kp T                            &kp Y  &hmr RCTRL U     &kp I     &kp O    &kp P    &kp SQT
-        &kp LSHFT           &kp A  &kp S    &lt 3 D    &lt 1 F     &kp G                             &kp H  &lt 2 J     &lt 4 K   &kp L    &kp SEMI &kp RSHFT
+        &kp LSHFT           &lt 5 A  &kp S    &lt 3 D    &lt 1 F     &kp G                             &kp H  &lt 2 J     &lt 4 K   &kp L    &kp SEMI &kp RSHFT
         &kp LALT            &kp Z  &kp X    &kp C    &kp V     &kp B   &kp GRAVE &kp EQUAL     &kp N  &kp M     &kp COMMA &kp DOT  &kp FSLH &kp RALT
-        &kp LGUI &none &none &kp TAB  &kp BSPC &kp RET  &kp SPACE &kp ESC &none &none 
+        &kp LGUI &none &none &kp TAB  &kp BSPC                                                 &kp RET  &kp SPACE &kp ESC &none &none 
       >;
     };
 
@@ -93,10 +93,10 @@
       // |       |  =  |  -  |  +   |  {   |  }   |        |  |       |  [   |  ]    |  ;    |  :   |   \   |       |
       //               |     |      |      |      |        |  |       |      |       |       |      |
       bindings = <
-        &trans    &trans    &trans   &trans       &trans    &trans                   &kp F1    &kp F2   &kp F3    &kp F4    &kp F5   &kp PGUP
-        &trans    &trans    &trans   &trans       &trans    &trans                   &kp DEL   &kp HOME &kp UP    &kp END    &kp F6    &kp PGDN
-        &trans    &trans    &trans   &kp LCTRL    &trans    &trans                   &kp CAPS &kp LEFT &kp DOWN &kp RIGHT  &kp F7  &trans
-        &trans    &trans    &trans   &trans       &trans    &trans   &trans    &trans  &kp F8  &kp F9 &kp F10  &kp F11 &kp F12  &trans
+        &trans    &trans    &trans   &trans       &trans    &trans                   &trans    &trans   &trans    &trans    &trans   &trans
+        &trans    &trans    &trans   &trans       &trans    &trans                   &kp DEL   &kp HOME &kp UP    &kp END    &trans    &kp PG_UP
+        &trans    &kp LCTRL &trans   &trans    &trans    &trans                   &kp CAPS &kp LEFT &kp DOWN &kp RIGHT  &trans  &kp PG_DN
+        &trans    &trans    &trans   &trans       &trans    &trans   &trans    &trans  &trans  &trans &trans  &trans &trans  &trans
         &trans    &trans      &trans    &trans     &trans &trans  &trans       &trans   &trans    &trans
       >;
     };
@@ -145,14 +145,25 @@
       //                |      |       |       |      |      |  |      |      |      |       |      |
       bindings = <
         &trans    &trans    &trans   &trans       &trans    &trans                   &trans &trans &trans &trans &trans &trans
-        &trans    &sk LC(LSHFT)    &sk LA(LSHFT)   &sk LC(LA(LSHFT)) &sk LC(LALT)    &trans              &trans &trans &trans &trans &trans &trans 
-        &trans    &sk LGUI    &kp UNDER    &kp MINUS   &kp PLUS    &trans                    &trans &trans &trans &trans &trans &trans 
-        &trans    &kp LGUI    &trans   &trans       &trans    &trans   &trans &trans &trans &trans &trans &trans &trans &trans 
+        &trans    &sk LC(LSHFT)    &sk LA(LSHFT)   &sk LCTRL &sk LC(LALT)    &trans              &trans &trans &trans &trans &trans &trans 
+        &sk LSHFT &sk LGUI    &kp UNDER    &kp MINUS   &kp PLUS    &trans                    &trans &trans &trans &trans &trans &trans 
+        &sk LALT  &kp LGUI    &trans   &sk LC(LA(LSHFT))      &trans    &trans   &trans &trans &trans &trans &trans &trans &trans &trans 
         &trans    &trans      &trans    &trans     &trans &trans  &trans       &trans   &trans    &trans
       >;
     };
 
     fifth_layer {
+      display-name = "F-keys"
+      bindings = <
+        &trans    &trans    &trans   &trans       &trans    &trans                   &trans &trans &trans &trans &trans &trans
+        &trans    &trans    &trans   &trans       &trans    &trans                   &trans   &kp F7 &kp F8 &kp F9  &kp F12 &trans
+        &trans    &trans    &trans   &trans       &trans    &trans                   &trans   &kp F4 &kp F5 &kp F6  &kp F10 &kp F11
+        &trans    &trans    &trans   &trans       &trans    &trans   &trans    &trans  &trans &kp F1 &kp F2 &kp F3  &trans &trans
+        &trans    &trans      &trans    &trans     &trans &trans  &trans       &trans   &trans    &trans
+      >;
+    };
+
+    sixth_layer {
       // ----------------------------------------------------------------------------------------------------------------------------
       // | BTCLR  |  BT1    |  BT2    |   BT3   |   BT4   |   BT5   |                  |      |      |       |      |       |       |
       // | EXTPWR | RGB_HUD | RGB_HUI | RGB_SAD | RGB_SAI | RGB_EFF |                  |      |      |       |      |       |       |
@@ -165,11 +176,11 @@
         &ext_power EP_TOG &rgb_ug RGB_HUD &rgb_ug RGB_HUI &rgb_ug RGB_SAD &rgb_ug RGB_SAI &rgb_ug RGB_EFF                         &none &none &none &none &none &none
         &none             &rgb_ug RGB_BRD &rgb_ug RGB_BRI &none           &none           &none                                   &none &none &none &none &none &none
         &none             &none           &none           &none           &none           &none            &rgb_ug RGB_TOG &none  &none &none &none &none &none &none
-        &none           &none           &none           &none            &none           &tog 6  &none &none &none &none
+        &none           &none           &none           &none            &none           &tog 7  &none &none &none &none
       >;
     };
 
-    sixth_layer {
+    seventh_layer {
       display-name = "game";
       // ------------------------------------------------------------------------------------------------------------
       // |   `   |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |   `   |
